@@ -1,0 +1,26 @@
+<div *ngIf="catalogueName">
+  <h2>Catalogue {{ catalogueName }} - Images</h2>
+  <h1></h1>
+
+  <div class="image-container">
+    <div *ngFor="let image of images; let i = index" class="image-item">
+      <div class="card" style="width: 18rem;">
+        <img [src]="'imagess/' + image.imageName" class="image-preview">
+        <div class="card-body">
+          <div class="image-buttons">
+            <a  class="consulter-button btn btn-primary btn-sm" [routerLink]="['/image', image.imageName]">Consulter</a>
+
+            <a class="supprimer-button btn btn-danger btn-sm" (click)="deleteImage(image.id)">Delete</a>
+            <!-- Ajoutez un lien de téléchargement avec l'attribut "download" -->
+            <a [href]="'imagess/' + image.imageName" download class="telecharger-button btn btn-success btn-sm">Dowload</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Input file element for selecting an image -->
+  <input type="file" (change)="onFilesSelected($event)" multiple>
+  <button (click)="uploadImages()">Upload Images</button>
+
+</div>

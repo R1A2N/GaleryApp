@@ -1,0 +1,33 @@
+<!-- image-details.component.html -->
+
+<div *ngIf="showDataMessage">
+  <div *ngIf="messageToShow" class="alert alert-info">
+    {{ messageToShow }}
+    <button (click)="closeAlert()">Fermer</button>
+  </div>
+  <p>Données disponibles pour cette image</p>
+</div>
+
+<div>
+  <h1>Détails de l'image {{ nomImage }}</h1>
+
+  <img [src]="'imagess/' + nomImage" alt="Image Details">
+
+  <div *ngIf="histogramImages.length > 0">
+    <h2>Images d'histogramme :</h2>
+    <div *ngFor="let image of histogramImages">
+      <img [src]="image" alt="Histogram Image">
+    </div>
+  </div>
+
+  <div *ngIf="dataAvailable || (imageDetails && imageDetails.dominant_colors)">
+    <h2>Couleurs Dominantes :</h2>
+    <div class="color-blocks">
+      <div *ngFor="let color of getDominantColors()" class="color-block" [ngStyle]="rgbColor(color.value)"></div>
+    </div>
+  </div>
+
+  <button [ngClass]="{'btn-success': !dataAvailable, 'btn-secondary': dataAvailable}" (click)="onCalculerClick()">Calculer</button>
+</div>
+
+<p *ngIf="!dataAvailable">Aucune donnée disponible pour cet nom d'image.</p>

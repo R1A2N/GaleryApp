@@ -1,0 +1,101 @@
+<form [formGroup]="form" (submit)="onSubmit()">
+  <div class="d-flex justify-content-between">
+    <div class="d-flex flex-column align-items-center">
+      <h2>Add Files</h2>
+      <div class="mb-3">
+        <input  class="form-control" id="file-upload" type="file" name="fileUpload"  (change)="onFileSelect($event)"  accept="image/*" multiple/>
+        <label for="file-upload" id="file-drag">
+          <img id="file-image" src="#" alt="Preview" class="hidden">
+          <div id="start">
+            <i class="fa fa-download" aria-hidden="true"></i>
+            <div>Select a file or drag here</div>
+            <div id="notimage" class="hidden">Please select an image</div>
+            <span id="file-upload-btn"  class="btn btn-primary">Select a file</span>
+          </div>
+          <div id="response" class="hidden">
+            <div id="messages"></div>
+            <progress class="progress" id="file-progress" value="0">
+              <span>0</span>%
+            </progress>
+          </div>
+        </label>
+      </div>
+    </div>
+
+
+
+    <div class="d-flex flex-column align-items-center">
+
+      <div class="d-flex flex-column align-items-center">
+        <label for="imageType">Choose Type</label>
+        <select class="form-select" formControlName="imageType" id="imageType">
+          <option value="All"></option>
+          <option *ngFor="let type of allImageTypes" [value]="type">
+            {{ type }}
+          </option>
+        </select>
+        <input
+          type="text"
+          id="ftype"
+          name="type"
+          placeholder="Add Type.."
+          formControlName="customImageType"
+        />
+        <button class="btn btn-primary" (click)="onAddCustomType()">Add Type</button>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="container mt-4">
+    <ng-container *ngFor="let type of ['All', 'Nature', 'Fruits', 'Fourniture']">
+      <input type="radio"
+            name="Photos"
+            [id]="'check' + type"
+            [value]="type"
+            [checked]="form.get('imageType')?.value === type"
+            (change)="onTypeChange(type)"
+            [ngStyle]="{ 'display': form.get('imageType')?.value !== type ? 'none' : 'inline-block' }">
+      <label [for]="'check' + type"
+            [ngStyle]="{ 'display': form.get('imageType')?.value !== type ? 'none' : 'inline-block' }">
+        {{ type === 'All' ? 'All Photos' : type }}
+      </label>
+    </ng-container>
+
+
+
+    <div class="container">
+      <h1>OUR PHOTO GALLERY</h1>
+      <div class="top-content">
+        <h3>Photo Gallery</h3>
+        <ng-container *ngFor="let type of allImageTypes">
+          <label [for]="'check' + type">{{ type === 'All' ? 'All Photos' : type }}</label>
+        </ng-container>
+      </div>
+
+
+      <div class="photo-gallery">
+
+        <div *ngFor="let imageData of imagesToDisplay()" class="col-md-4 mb-4">
+          <div class="pic {{ form.get('imageType')?.value?.toLowerCase() }}">
+            <img class="small-image" [src]="imageData.url" [alt]="imageData.name" />
+            <input
+              type="checkbox"
+              [id]="'checkImage' + imageData.name"
+              [(ngModel)]="imageData.selected"
+              name="selectedImages"
+            />
+            <div class="d-flex justify-content-center mt-2">
+              <button class="btn btn_group mx-2 small-button" (click)="downloadImage(imageData)">Download</button>
+            
+              <button class="btn btn_group mx-2 small-button" (click)="removeImage(imageData)">Remove</button>
+              <button (click)="showHistogram(imageData.url)" [routerLink]="'/histogram'" class="btn btn_group mx-2 small-button">Histogram</button>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+</form>
+

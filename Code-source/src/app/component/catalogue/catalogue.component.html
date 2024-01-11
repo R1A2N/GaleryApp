@@ -1,0 +1,52 @@
+
+<!-- catalogue.component.html -->
+
+
+<div>
+
+
+
+  <!-- catalogue.component.html -->
+
+  <div>
+    <h2>Liste des catalogues</h2>
+    <h1></h1>
+    <div class="row">
+
+      <div *ngFor="let catalogue of catalogues" class="col-md-4 mb-4">
+        <div class="card">
+
+          <div class="card-body" a>
+            <h5 class="card-title">{{ catalogue.catalogueName }}</h5>
+            <p class="card-text">{{ catalogue.catalogueUrl }}</p>
+            <div class="d-flex justify-content-between">
+              <button (click)="deleteCatalogue(catalogue.id)" class="btn btn-danger btn-sm">Supprimer</button>
+              <button [routerLink]="['/catalogue', catalogue.id]" class="btn btn-primary btn-sm">Consulter</button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <h2>Ajouter un catalogue</h2>
+    <h1></h1>
+
+  </div>
+  <div class="card-body mx-auto" style="width: 500px;">
+    <form (submit)="addCatalogue()">
+
+      <div class="mb-3">
+        <label for="catalogueName" class="form-label text-center">Nom du catalogue:</label>
+        <input type="text" class="form-control text-center" id="catalogueName" name="catalogueName" [(ngModel)]="newCatalogue.catalogueName" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="catalogueUrl" class="form-label text-center">Description du catalogue:</label>
+        <input type="text" class="form-control text-center" id="catalogueUrl" name="catalogueUrl" [(ngModel)]="newCatalogue.catalogueUrl" required>
+      </div>
+
+      <button type="submit" class="btn btn-danger btn-sm">Ajouter</button>
+    </form>
+  </div>
+</div>

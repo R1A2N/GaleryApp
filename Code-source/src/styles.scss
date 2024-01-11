@@ -1,0 +1,434 @@
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+body {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+}
+
+input {
+  width: 400px;
+  margin: 1em;
+  height: 2em;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  height: 2em;
+  width: 400px;
+  border-radius: 4px;
+  margin: 1em;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #444;
+  color: #eee;
+}
+
+.profile {
+  width: 400px;
+  margin: 1em auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.profile:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.profile div {
+  background-color: #eee;
+  font-size: 24px;
+}
+
+
+/* upload.component.css */
+
+.my-upload-well {
+  /* Vos styles spécifiques pour my-upload-well */
+  /* Par exemple : */
+  //background-color: #f0f0f0;
+  padding: 20px;
+ // border: 1px solid #ccc;
+}
+
+.my-row {
+  /* Styles spécifiques pour my-row */
+  /* Par exemple : */
+  margin-bottom: 15px;
+}
+
+.my-buttons {
+  /* Styles spécifiques pour my-buttons */
+  /* Par exemple : */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-add-new-btn {
+  /* Styles spécifiques pour my-add-new-btn */
+  /* Par exemple : */
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+/* upload.component.css */
+
+
+
+.slider_image {
+  /* Styles spécifiques pour les images avec la classe slider_image */
+  width: 200%; /* Pour s'assurer que l'image occupe toute la largeur du conteneur parent */
+  height: auto; /* Pour conserver le ratio hauteur/largeur */
+  border: 1px solid #ddd; /* Ajouter une bordure */
+  border-radius: 5px; /* Ajouter des coins arrondis */
+  margin-right: 10px;
+  margin-left: -150px; /* Pour déplacer l'image vers la gauche */
+   /* Pour déplacer l'image vers la gauche */
+}
+.small-image {
+  max-width: 200px; /* Réglez la largeur souhaitée */
+  max-height: 200px; /* Réglez la hauteur souhaitée */
+}
+
+.small-button {
+  width: 100px; /* Ajustez la largeur selon votre préférence */
+  height: 30px; /* Ajustez la hauteur selon votre préférence */
+  font-size: 14px; /* Taille de la police pour le texte dans le bouton */
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.container{
+  width:100%;
+  text-align:center;
+}
+h1{
+  font-weight:normal;
+  font-size: 35px;
+  position:relative;
+  margin:40px 0;
+}
+h1::before{
+  content:'';
+  position:absolute;
+  width: 100px;
+  height:3px;
+  background-color: crimson;
+  bottom: -10px;
+  left:50%;
+  transform: translate(-50%);
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+  0%{
+    width: 100px;
+  }
+  50%{
+    width: 200px;
+  }
+  100%{
+    width: 100px;
+
+  }
+}
+.top-content{
+  background-color:rgb(243,243,243);
+  width:90%;
+  margin:0 auto 20px auto;
+  height:60px;
+  display:flex;
+  align-items:center;
+}
+h3{
+  height : 100%;
+  background-color:rgb(221,221,221);
+  line-height: 60px;
+  padding: 0 50px;
+  color:white;
+}
+label{
+  display: inline-block;
+  height:100%;
+  margin: 0 20px;
+  line-height: 60px;
+  font-size :18px;
+  color:gray;
+  cursor:pointer;
+  transition: .5s;
+
+}
+label:hover{
+  color:black;
+}
+.photo-gallery{
+  width:90%;
+  margin:auto;
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap:20px;
+}
+.pic{
+  position:relative;
+  height: 230px;
+  border-radius:10px;
+  box-shadow:3px 3px 5px lightgray;
+  cursor:pointer;
+}
+.pic img{
+  width:100%;
+  height:100%;
+  border-radius: 10px;
+}
+
+.pic::before{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  font-size:25px;
+  font-weight:bold;
+  width: 100%;
+  margin-top: -100px;
+  opacity:0;
+  transition: .3s;
+  transition-delay: .2s;
+  z-index: 1;
+
+}
+.pic:after{
+  content: "";
+  position:absolute;
+width:100%;
+bottom: 0;
+left:0;
+border-radius: 10px;
+height:0;
+background-color: rgba(0, 0, 0, 0.4);
+transition: .3s;
+
+}
+.pic:hover::after{
+  height:100%
+}
+.pic:hover::before{
+margin-top: 0;
+opacity: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+// Vars and Reset
+//
+$theme:       #454cad;
+$dark-text:   #5f6982;
+
+
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 26px;
+  line-height: 1;
+  color: $theme;
+  margin-bottom: 0;
+}
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: $dark-text;
+}
+// Upload Demo
+//
+.uploader {
+  display: block;
+  clear: both;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+
+  label {
+    float: left;
+    clear: both;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    background: #fff;
+    border-radius: 7px;
+    border: 3px solid #eee;
+    transition: all .2s ease;
+    user-select: none;
+
+    &:hover {
+      border-color: $theme;
+    }
+    &.hover {
+      border: 3px solid $theme;
+      box-shadow: inset 0 0 0 6px #eee;
+
+      #start {
+        i.fa {
+          transform: scale(0.8);
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+
+  #start {
+    float: left;
+    clear: both;
+    width: 100%;
+    &.hidden {
+      display: none;
+    }
+    i.fa {
+      font-size: 50px;
+      margin-bottom: 1rem;
+      transition: all .2s ease-in-out;
+    }
+  }
+  #response {
+    float: left;
+    clear: both;
+    width: 100%;
+    &.hidden {
+      display: none;
+    }
+    #messages {
+      margin-bottom: .5rem;
+    }
+  }
+
+  #file-image {
+    display: inline;
+    margin: 0 auto .5rem auto;
+    width: auto;
+    height: auto;
+    max-width: 180px;
+    &.hidden {
+      display: none;
+    }
+  }
+
+  #notimage {
+    display: block;
+    float: left;
+    clear: both;
+    width: 100%;
+    &.hidden {
+      display: none;
+    }
+  }
+
+  progress,
+  .progress {
+    // appearance: none;
+    display: inline;
+    clear: both;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 180px;
+    height: 8px;
+    border: 0;
+    border-radius: 4px;
+    background-color: #eee;
+    overflow: hidden;
+  }
+
+  .progress[value]::-webkit-progress-bar {
+    border-radius: 4px;
+    background-color: #eee;
+  }
+
+  .progress[value]::-webkit-progress-value {
+    background: linear-gradient(to right, darken($theme,8%) 0%, $theme 50%);
+    border-radius: 4px;
+  }
+  .progress[value]::-moz-progress-bar {
+    background: linear-gradient(to right, darken($theme,8%) 0%, $theme 50%);
+    border-radius: 4px;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+
+  .btn {
+    display: inline-block;
+    margin: .5rem .5rem 1rem .5rem;
+    clear: both;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: initial;
+    border: none;
+    border-radius: .2rem;
+    outline: none;
+    padding: 0 1rem;
+    height: 36px;
+    line-height: 36px;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+    background: $theme;
+    border-color: $theme;
+    cursor: pointer;
+  }
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}

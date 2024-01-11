@@ -1,0 +1,29 @@
+/* styles.css (ou votre fichier de styles Angular) */
+
+.catalogue-card {
+  width: 18rem;
+  margin: 10px; /* Espacement entre les cartes */
+}
+
+.catalogue-card .card-body {
+  padding: 1.25rem; /* Espacement à l'intérieur de la carte */
+}
+
+.catalogue-card .card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.catalogue-card .card-subtitle {
+  font-size: 1rem;
+  color: #6c757d; /* Couleur du texte du sous-titre */
+}
+
+.catalogue-card .card-text {
+  margin-bottom: 0.75rem; /* Espacement entre le texte et les liens */
+}
+
+.catalogue-card .card-link {
+  display: block; /* Affiche les liens en tant que blocs pour l'espacement vertical */
+  margin-bottom: 0.25rem; /* Espacement entre les liens */
+}

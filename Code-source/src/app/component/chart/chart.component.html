@@ -1,0 +1,11 @@
+<form (ngSubmit)="submitt()">
+  <label for="imagePath">Chemin de l'image:</label>
+  <input type="text" id="imagePath" [(ngModel)]="imagePath" name="imagePath" required>
+  <button type="submit">Envoyer</button>
+</form>
+
+<div *ngIf="response">
+  <h2>Réponse de l'API :</h2>
+  <pre>{{ response | json }}</pre>
+</div>
+

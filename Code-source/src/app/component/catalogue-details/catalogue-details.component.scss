@@ -1,0 +1,55 @@
+/* Ajoutez ces styles dans le fichier CSS de votre composant ou dans le fichier de style global */
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-item {
+  margin-right: 10px; /* Espace entre chaque image */
+  margin-bottom: 10px; /* Espace entre chaque ligne */
+}
+
+.image-preview {
+  max-width: 100%;
+  height: auto;
+}
+
+.image-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+}
+
+.line-break {
+  flex-basis: 100%;
+  height: 0;
+}
+/* Ajoutez ces styles dans le fichier CSS de votre composant ou dans le fichier de style global */
+
+.image-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.image-buttons a {
+  padding: 5px 10px; /* Ajustez la taille de rembourrage selon vos besoins */
+  margin-right: 5px; /* Espace entre chaque bouton */
+  text-decoration: none; /* Supprime le soulignement par défaut des liens */
+  color: #fff; /* Couleur du texte */
+  border-radius: 5px; /* Coins arrondis */
+}
+
+.calculer-button {
+  background-color: #007bff; /* Couleur de fond pour le bouton Calculer */
+}
+
+.supprimer-button {
+  background-color: #dc3545; /* Couleur de fond pour le bouton Supprimer */
+}
+
+.telecharger-button {
+  background-color: #28a745; /* Couleur de fond pour le bouton Télécharger */
+}
+
