@@ -3,6 +3,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FlaskService } from "../../service/flask.service";
 import { ActivatedRoute } from "@angular/router";
+import * as Highcharts from 'highcharts';
+import HighchartsMore from 'highcharts/highcharts-more';
+import HighchartsExporting from 'highcharts/modules/exporting';
+import HighchartsExportData from 'highcharts/modules/export-data';
+
+HighchartsMore(Highcharts);
+HighchartsExporting(Highcharts);
+HighchartsExportData(Highcharts);
 
 interface DominantColor {
   value: string;
