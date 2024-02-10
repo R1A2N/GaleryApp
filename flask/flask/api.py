@@ -34,8 +34,8 @@ def process_image_data():
 
     if nom_image and os.path.exists(f'imagess/{nom_image}'):
         # Vérifier si les données existent déjà dans le dictionnaire
-        if nom_image in image_data_dict:
-            return jsonify({'message': 'Les données pour cette image ont déjà été calculées.', 'data': image_data_dict[nom_image]})
+        if nom_image in image_data_dict and "data" in image_data_dict[nom_image]:
+            return jsonify({'message': 'Les données pour cette image ont déjà été calculées.', 'data': image_data_dict[nom_image]["data"]})
 
         image = cv2.imread(f'imagess/{nom_image}')
 
